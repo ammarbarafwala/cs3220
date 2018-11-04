@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grades</title>
+<style>
+  td { text-align: center;}
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("td:not(td:last-of-type)").dblclick(function(){
+		var a=$(this).text();
+		var b=$("<input type='text' value='"+a+"'/>");
+		$(this).html(b);
+		b.blur(function(){
+		    var c=b.val();
+			b.parent().text(c);
+		});
+	});
+	$("td:last-of-type").dblclick(function() {
+		var a=$(this).text();
+		var b=$("<select>"
+					+"<option "+(a=='A'?"selected='selected'":"")+">A</option>"
+					+"<option "+(a=='B'?"selected='selected'":"")+">B</option>"
+					+"<option "+(a=='C'?"selected='selected'":"")+">C</option>"
+					+"<option "+(a=='D'?"selected='selected'":"")+">D</option>"
+					+"<option "+(a=='F'?"selected='selected'":"")+">F</option>"
+				+"</select>");
+		$(this).html(b);
+		b.blur(function(){
+			    var c=b.val();
+				b.parent().text(c);
+			});
+	});
+	
+	
+});
+</script>
+</head>
+<body>
+<table border="1">
+<tr><th>Name</th><th>Homework 1</th><th>Homework 2</th><th>Grade</th></tr>
+<tr><td>John</td><td>90</td><td>80</td><td>B</td></tr>
+<tr><td>Jane</td><td>90</td><td>100</td><td>A</td></tr>
+</table>
+</body>
+</html>
+

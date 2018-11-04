@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(function(){
+    $("#add").click(function name() {
+		var x=Number($("[name='x']").val());
+		var y=Number($("[name='y']").val());
+		var z=x+y;
+		$("#sum").html(z);
+	});
+    	
+});
+</script>
+</head>
+<body>
+<input type="text" name="x" /> + <input type="text" name="y" /> = <span id="sum">0</span>
+<p><button id="add">Add</button>
+</body>
+</html>
